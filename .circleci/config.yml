@@ -1,4 +1,9 @@
 version: 2.1
+
+orbs:
+  checkmrx-soap:nukengprod/checkmarx-soap@2.0.4
+  aws-s3: circleci/aws-s3@2.0.0
+
 jobs:
   say-hello:
     docker:
@@ -8,6 +13,7 @@ jobs:
       - run:
           name: Say hello
           command: "echo Hello, World!"
+
 workflows:
   say-hello-workflow:
     jobs:
