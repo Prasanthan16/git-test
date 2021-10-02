@@ -1,19 +1,19 @@
 version: 2.1
 
 orbs:
-  aws-s3 : circleci/aws-s3@2.0.0
+  win: circleci/windows@2.4.1
 
 jobs:
-  say-hello:
-    docker:
-      - image: cimg/base:stable
+  build:
+    executor:
+      name: win/default
+      size: medium
     steps:
       - checkout
-      - run:
-          name: Say hello
-          command: "echo Hello, World!"
+      - run: 'Write-Host ''Hello, Windows'''
 
 workflows:
-  say-hello-workflow:
+  version: 2
+  workflow:
     jobs:
-      - say-hello
+    - build
