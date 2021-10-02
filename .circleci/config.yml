@@ -2,14 +2,14 @@ version: 2.1
 
 orbs:
   checkmrx-soap: nukengprod/checkmarx-soap@2.0.4
-  aws-s3: circleci/aws-s3@2.0.0
+  win: circleci/windows@2.2.0
 
 executors: 
   base:
     environments: 
     ANT_OPTS: "-Xmx2g"
-    docker:
-      -image: circleci/openjdk:8-jdk
+    win/default: 
+      - powershell
 
 jobs:
   build_dev_artifacts:
