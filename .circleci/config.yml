@@ -6,8 +6,6 @@ orbs:
 
 executors: 
   base:
-    environments: 
-    ANT_OPTS: "-Xmx2g"
     win/default: 
       - powershell
 
